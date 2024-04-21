@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import stripe from "stripe";
-import User from "../models/Game.js";
+import Product from "../models/Product.js";
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -15,7 +15,7 @@ export const createOrder = async (req, res) => {
     // Retrieve item information
     const lineItems = await Promise.all(
       products.map(async (product) => {
-        const item = await Game.findOne(product.name);
+        const item = await Product.findOne(product.name);
         
         return {
           price_data: {

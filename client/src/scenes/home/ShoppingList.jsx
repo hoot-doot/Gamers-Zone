@@ -34,7 +34,7 @@ const ShoppingList = () => {
   }, []);
 
   const topRatedItems = items.filter(
-    item => item.rating >= 8
+    item => item.rating >= 4.5
   ); 
 
   const actionGames = items.filter(
@@ -44,9 +44,6 @@ const ShoppingList = () => {
   const strategyGames = items.filter(
     item => item.category.includes("Strategy")
   );
-  // const bestSellersItems = items.filter(
-  //   (item) => item.category === "bestSellers"
-  // );
 
   return (
     <Box width="80%" margin="80px auto">
@@ -68,9 +65,10 @@ const ShoppingList = () => {
         }}
       >
         <Tab label="ALL" value="all" />
-        <Tab label="NEW ARRIVALS" value="newArrivals" />
-        <Tab label="Strategy" value="strategyGames" />
         <Tab label="TOP RATED" value="topRated" />
+        <Tab label="Action" value="actionGames" />
+        <Tab label="Strategy" value="strategyGames" />
+        
       </Tabs>
       <Box
         margin="0 auto"
@@ -84,6 +82,10 @@ const ShoppingList = () => {
           items.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
           ))}
+          {value === "topRated" &&
+          topRatedItems.map((item) => (
+            <Item item={item} key={`${item.name}-${item._id}`} />
+          ))}
         {value === "actionGames" &&
           actionGames.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
@@ -92,10 +94,7 @@ const ShoppingList = () => {
           strategyGames.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
           ))}
-        {value === "topRated" &&
-          topRatedItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item._id}`} />
-          ))}
+        
       </Box>
     </Box>
   );

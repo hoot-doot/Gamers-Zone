@@ -40,7 +40,7 @@ function Navbar() {
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
         >
-          ECOMMER
+          UnityHUB
         </Box>
         <Box
           display="flex"

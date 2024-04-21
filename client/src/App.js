@@ -7,10 +7,10 @@ import ItemDetails from "./scenes/itemDetails/ItemDetails";
 import CartMenu from "./scenes/global/CartMenu";
 import Checkout from "./scenes/checkout/Checkout";
 import Confirmation from "./scenes/checkout/Confirmation";
+import { useSelector } from "react-redux";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -19,6 +19,7 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  const isAuth = Boolean(useSelector((state) => state.token));
   return (
     <div className="app">
       <BrowserRouter>

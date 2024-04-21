@@ -24,7 +24,7 @@ function Footer() {
             mb="30px"
             color={shades.secondary[500]}
           >
-            ECOMMER
+            UnityHub
           </Typography>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -38,7 +38,6 @@ function Footer() {
           <Typography variant="h4" fontWeight="bold" mb="30px">
             About Us
           </Typography>
-          <Typography mb="30px">Careers</Typography>
           <Typography mb="30px">Our Stores</Typography>
           <Typography mb="30px">Terms & Conditions</Typography>
           <Typography mb="30px">Privacy Policy</Typography>
@@ -49,8 +48,6 @@ function Footer() {
             Customer Care
           </Typography>
           <Typography mb="30px">Help Center</Typography>
-          <Typography mb="30px">Track Your Order</Typography>
-          <Typography mb="30px">Corporate & Bulk Purchasing</Typography>
           <Typography mb="30px">Returns & Refunds</Typography>
         </Box>
 
@@ -59,10 +56,10 @@ function Footer() {
             Contact Us
           </Typography>
           <Typography mb="30px">
-            50 north Whatever Blvd, Washington, DC 10501
+            50 BBC Whatever Blvd, Bhaktapur
           </Typography>
           <Typography mb="30px" sx={{ wordWrap: "break-word" }}>
-            Email: mredwardroh@gmail.com
+            Email: devansh@gmail.com
           </Typography>
           <Typography mb="30px">(222)333-4444</Typography>
         </Box>

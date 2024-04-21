@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  user: null,
+  token: null,
   isCartOpen: false,
   cart: [],
   items: [],
@@ -52,6 +54,16 @@ export const cartSlice = createSlice({
     setIsCartOpen: (state) => {
       state.isCartOpen = !state.isCartOpen;
     },
+
+    setLogin: (state, action) => {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+    },
+    setLogout: (state) => {
+      state.user = null;
+      state.token = null;
+    },
+
   },
 });
 
@@ -62,6 +74,9 @@ export const {
   increaseCount,
   decreaseCount,
   setIsCartOpen,
+  setLogin,
+  setLogout,
+
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
