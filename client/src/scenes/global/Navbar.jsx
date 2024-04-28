@@ -1,19 +1,37 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Badge, Box, IconButton } from "@mui/material";
+import { Badge, Box,MenuItem, IconButton ,Typography} from "@mui/material";
 import {
   PersonOutline,
   ShoppingBagOutlined,
   MenuOutlined,
   SearchOutlined,
 } from "@mui/icons-material";
+import Popover from '@mui/material/Popover';
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
-import { setIsCartOpen } from "../../state";
+import { setIsCartOpen,setLogout } from "../../state";
+import * as React from 'react';
+import Button from '@mui/material/Button'
 
 function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
+  const user = useSelector((state) => state.cart.user);
+  const firstName = user?.firstName
+  const picture = useSelector((state) => state.cart.user);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
   return (
     <Box
@@ -51,9 +69,30 @@ function Navbar() {
           <IconButton sx={{ color: "black" }}>
             <SearchOutlined />
           </IconButton>
-          <IconButton sx={{ color: "black" }}>
-            <PersonOutline />
-          </IconButton>
+
+          <Button aria-describedby={id}  onClick={handleClick}>
+          <PersonOutline />
+      </Button>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem  >
+        <Typography variant="h5" >{user?.firstName} { }
+                {user?.lastName}</Typography>
+                
+            </MenuItem>
+        <MenuItem onClick={() => dispatch(setLogout())} >
+                Log Out
+            </MenuItem>
+      </Popover>
+
           <Badge
             badgeContent={cart.length}
             color="secondary"
