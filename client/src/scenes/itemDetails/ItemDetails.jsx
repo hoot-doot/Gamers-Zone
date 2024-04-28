@@ -77,7 +77,7 @@ const ItemDetails = () => {
 
           <Box m="65px 0 25px 0">
             <Typography variant="h3">{item?.name}</Typography>
-            <Typography>${item?.price}</Typography>
+            <Typography>Nrs {item?.price}</Typography>
             <Typography sx={{ mt: "20px" }}>
               {item?.longDescription}
             </Typography>
