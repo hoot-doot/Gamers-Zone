@@ -1,8 +1,11 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import Form from "./Form";
 import { shades as colors } from "../../theme";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   return (
     <Box>
@@ -12,7 +15,12 @@ const LoginPage = () => {
         p="1rem 6%"
         textAlign="center"
       >
-        <Typography fontWeight="bold" fontSize="100px" color="secondary">
+        <Typography fontWeight="bold"  fontSize="100px" color="secondary" onClick={() => navigate(`/`)}
+        sx={{
+          '&:hover': {
+              cursor: 'pointer'
+          }
+      }}>
           UnityHub
         </Typography>
       </Box>

@@ -3,7 +3,7 @@ import MainCarousel from "./MainCarousel";
 
 function Home() {
   return (
-    <div className="gear">
+    <div className="home">
       <MainCarousel />
       <ShoppingList />
     </div>

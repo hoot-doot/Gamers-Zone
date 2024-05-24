@@ -23,7 +23,7 @@ function App() {
   const { pathname } = useLocation();
   
   // Check if the current route is the login page
-  const isLoginPage = pathname === "/";
+  const isLoginPage = pathname === "/login";
   const token = useSelector((state) => state.cart.token);
   console.log(token)
   const isAuth = Boolean(token);
@@ -32,12 +32,13 @@ function App() {
     <div className="app">
 
         {!isLoginPage && <Navbar />}
+        {/* <Navbar /> */}
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="home" element={isAuth ? <Home /> : <Navigate to="/" />} />
+          <Route path="login" element={<Login />} />
+          <Route path="/" element={<Home />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
-          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout" element={isAuth ? <Checkout /> : <Navigate to="/login" />} />
           <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
         {!isLoginPage && <CartMenu />}

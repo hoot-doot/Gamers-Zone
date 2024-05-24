@@ -56,7 +56,8 @@ app.use("/auth", authRoutes);
 // app.use("/users", userRoutes);
 app.use("/games", gameRoutes);
 
-app.use('/api/orders', ordersRoutes);
+// app.use('/api/orders', ordersRoutes);
+app.use('/api/payment', ordersRoutes)
 
   /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;

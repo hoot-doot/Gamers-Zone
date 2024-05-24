@@ -29,6 +29,11 @@ function Navbar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  
+  // Check if the current route is the login page
+  const token = useSelector((state) => state.cart.token);
+  console.log(token)
+  const isAuth = Boolean(token);
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
@@ -73,6 +78,7 @@ function Navbar() {
           <Button aria-describedby={id}  onClick={handleClick}>
           <PersonOutline />
       </Button>
+      
       <Popover
         id={id}
         open={open}
@@ -83,14 +89,19 @@ function Navbar() {
           horizontal: 'left',
         }}
       >
+        
         <MenuItem  >
         <Typography variant="h5" >{user?.firstName} { }
                 {user?.lastName}</Typography>
                 
-            </MenuItem>
+        </MenuItem>
+        {isAuth ?(
         <MenuItem onClick={() => dispatch(setLogout())} >
                 Log Out
-            </MenuItem>
+        </MenuItem>):(<MenuItem onClick={() => navigate("login")} >
+                Log in
+        </MenuItem>)
+        }
       </Popover>
 
           <Badge
