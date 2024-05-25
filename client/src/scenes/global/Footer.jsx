@@ -1,8 +1,10 @@
 import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 import { shades } from "../../theme";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
   const {
     palette: { neutral },
   } = useTheme();
@@ -35,15 +37,15 @@ function Footer() {
           <Typography variant="h4" fontWeight="bold" mb="30px">
             About Us
           </Typography>
-          <Typography mb="30px">Terms & Conditions</Typography>
-          <Typography mb="30px">Privacy Policy</Typography>
+          <Typography mb="30px" onClick={() => navigate("termsandconditions")}>Terms & Conditions</Typography>
+          <Typography mb="30px" onClick={() => navigate("privacypolicy")}>Privacy Policy</Typography>
         </Box>
 
         <Box>
           <Typography variant="h4" fontWeight="bold" mb="30px">
             Customer Care
           </Typography>
-          <Typography mb="30px">Returns & Refunds</Typography>
+          <Typography mb="30px" onClick={() => navigate("refund")}>Returns & Refunds</Typography>
         </Box>
 
         <Box width="clamp(20%, 25%, 30%)">

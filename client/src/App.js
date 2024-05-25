@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import Gear from "./scenes/gear/Gear";
 import PrivacyPolicy from "./scenes/privacy";
 import TermsAndConditions from "./scenes/terms";
+import Refund from "./scenes/refund"
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ function App() {
           <Route path="checkout/success" element={<Confirmation />} />
           <Route path="termsandconditions" element={<TermsAndConditions/>}/>
           <Route path="privacypolicy" element={<PrivacyPolicy/>}/>
+          <Route path="refund" element={<Refund/>}/>
         </Routes>
         {!isLoginPage && <CartMenu />}
         {!isLoginPage && <Footer />}

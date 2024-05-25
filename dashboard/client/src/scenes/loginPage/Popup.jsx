@@ -163,7 +163,7 @@ export default function Popup() {
           justifyContent="center"
           flexDirection="column"
           sx={{
-            p: 10,
+            p: 2,
             backgroundColor: colors.primary[400],
             width: "60vh",
             height: "55vh", // increased height
@@ -202,10 +202,9 @@ export default function Popup() {
           </Box>
           <Typography
             variant="h2"
-            color={"white"}
             fontWeight={600}
             sx={{
-              mt: 0,
+              mt: 4,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -216,8 +215,7 @@ export default function Popup() {
           {step === 1 && (
             <Box>
               <Typography
-              color={"white"}
-                variant="h6" 
+                variant="h6" // changed from h5 to h6
                 sx={{
                   mb: 2,
                   mt: 3,
@@ -230,7 +228,6 @@ export default function Popup() {
               </Typography>
               <form onSubmit={handleEmailSubmit}>
                 <TextField
-                
                   variant="outlined"
                   value={email}
                   label="Email Address"
@@ -238,14 +235,14 @@ export default function Popup() {
                   fullWidth
                   sx={{ mb: 2 }}
                 />
-                <Typography fontSize={"13px"} color={"red"} >
+                <Typography fontSize={"13px"} color={"red"}>
                   {isAlertVisible && loginStatus}
                 </Typography>
                 <Button
                   type="submit"
                   variant="contained"
                   sx={{
-                    backgroundColor: colors.primary[200],
+                    backgroundColor: colors.secondary[200],
                     width: "50%",
                     display: "flex",
                     justifyContent: "center",

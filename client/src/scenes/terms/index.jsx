@@ -4,8 +4,8 @@ import { Container, Typography, Box, Link } from '@mui/material';
 const TermsAndConditions = () => {
   return (
     <Container>
-      <Box mt={5}>
-        <Typography variant="h4" gutterBottom>
+      <Box mt={15}>
+        <Typography variant="h1" gutterBottom>
           Terms and Conditions
         </Typography>
 

@@ -75,8 +75,7 @@ const Item = ({ item, width }) => {
 
       <Box mt="3px">
         <Typography variant="subtitle2" color={neutral.dark}>
-          {category[1]
-            .replace(/^./, (str) => str.toUpperCase())}
+          {category[1]}
         </Typography>
         <Rating value={rating} readOnly />
         <Typography>{name}</Typography>

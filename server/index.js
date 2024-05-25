@@ -14,13 +14,19 @@ import ordersRoutes from "./routes/order.js";
 // import userRoutes from "./routes/users.js";
 import gameRoutes from "./routes/games.js";
 import { register } from "./controllers/auth.js";
+// import { sendResetEmail, verifyOtp, resetPassword } from "./controllers/auth.js";
 import { getSingleGame }  from "./controllers/games.js";
 // import { createPost } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
-// import User from "./models/User.js";
+import User from "./models/User.js";
 import Product from "./models/Product.js";
+import bcrypt from "bcrypt";
 // import Order from "./models/Order.js";
 import { games} from "./data/index.js";
+import nodemailer from "nodemailer";
+import crypto from "crypto";
+import refundRoutes from "./routes/refund.js"
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,6 +55,7 @@ const storage = multer.diskStorage({
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register);
 // app.post("/posts", verifyToken, upload.single("picture"), createPost);
+app.use('/api/refund', refundRoutes);
 
 /* ROUTES */
 app.get("/games/:id", getSingleGame);
@@ -121,3 +128,87 @@ mongoose
       // Product.insertMany(games)
   })
   .catch((error) => console.log(`${error} did not connect`));
+
+
+// Nodemailer setup
+const transporter = nodemailer.createTransport({
+  service: "gmail", // or another email service provider
+  auth: {
+    user: "canshu911@gmail.com",
+    pass: "qmys kkex rfmx usvf",
+  },
+});
+
+// Route for sending the password reset email
+app.post("/auth/send-reset-email", async (req, res) => {
+  const { email } = req.body;
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    return res.status(400).json({ msg: "User doesn't exist" });
+  }
+
+  const resetToken = crypto.randomBytes(20).toString("hex");
+  user.resetToken = resetToken;
+  user.resetTokenExpiration = Date.now() + 3600000; // 1 hour expiration
+  await user.save();
+
+  const mailOptions = {
+    from: "devansh-email@gmail.com",
+    to: email,
+    subject: "Password Reset",
+    text: `You are receiving this email because you (or someone else) has requested a password reset for your account.\n\n
+    Please use the following OTP to reset your password: ${resetToken}\n\n
+    If you did not request this, please ignore this email and your password will remain unchanged.\n`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log(error);
+      return res.status(500).json({ msg: "Error sending email" });
+    } else {
+      console.log("Email sent: " + info.response);
+      return res.status(200).json({ msg: "Email sent" });
+    }
+  });
+});
+
+// Route for verifying the OTP
+app.get("/auth/verify-otp", async (req, res) => {
+  const { code } = req.query;
+  const user = await User.findOne({
+    resetToken: code,
+    // resetTokenExpiration: { $gt: new Date(Date.now()) },
+  });
+
+  if (!user) {
+    return res.status(400).json({ err: "Invalid or expired OTP" });
+  }
+
+  return res.status(200).json({ msg: "OTP verified" });
+});
+
+// Route for resetting the password
+app.put("/reset-password", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    return res.status(400).json({ message: "User doesn't exist" });
+  }
+
+  try {
+    // Hash the new password with a salt of 12 rounds
+    const salt = await bcrypt.genSalt(12);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Update the user's password
+    user.password = hashedPassword;
+    user.resetToken = undefined;
+    user.resetTokenExpiration = undefined;
+    await user.save();
+
+    return res.status(200).json({ msg: "Password reset successful" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }});

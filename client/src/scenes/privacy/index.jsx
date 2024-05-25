@@ -4,19 +4,19 @@ import { Container, Typography, Box, Link } from '@mui/material';
 const PrivacyPolicy = () => {
   return (
     <Container>
-      <Box mt={5}>
-        <Typography variant="h4" gutterBottom>
+      <Box mt={15}>
+        <Typography variant="h1" gutterBottom>
           Privacy Policy
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           1. Introduction
         </Typography>
         <Typography paragraph>
           UnityHub ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, www.unityhub.com (the "Site"), and use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           2. Information We Collect
         </Typography>
         <Typography paragraph>
@@ -41,7 +41,7 @@ const PrivacyPolicy = () => {
           Financial information, such as data related to your payment method (e.g., valid credit card number, card brand, expiration date) that we may collect when you purchase, order, return, exchange, or request information about our services from the Site.
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           3. Use of Your Information
         </Typography>
         <Typography paragraph>
@@ -58,7 +58,7 @@ const PrivacyPolicy = () => {
           <li>Offer new products, services, and/or recommendations to you.</li>
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           4. Disclosure of Your Information
         </Typography>
         <Typography paragraph>
@@ -83,28 +83,28 @@ const PrivacyPolicy = () => {
           We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           5. Security of Your Information
         </Typography>
         <Typography paragraph>
           We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           6. Policy for Children
         </Typography>
         <Typography paragraph>
           We do not knowingly solicit information from or market to children under the age of 13. If we learn that we have collected personal information from a child under age 13 without verification of parental consent, we will delete that information as quickly as possible. If you become aware of any data we have collected from children under age 13, please contact us at support@unityhub.com.
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           7. Changes to This Privacy Policy
         </Typography>
         <Typography paragraph>
           We may update this Privacy Policy from time to time in order to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by posting the new Privacy Policy on our Site. You are advised to review this Privacy Policy periodically for any changes.
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           8. Contact Us
         </Typography>
         <Typography paragraph>
@@ -112,8 +112,8 @@ const PrivacyPolicy = () => {
         </Typography>
         <Typography paragraph>
           <strong>UnityHub Customer Service</strong><br />
-          Email: <Link href="mailto:support@unityhub.com">support@unityhub.com</Link><br />
-          Phone: (123) 456-7890<br />
+          Email: <Link href="mailto:devanshashrestha123@gmail.com">devanshashrestha123@gmail.com</Link><br />
+          Phone: (977) 9819183781<br />
           Address: 123 Gaming Avenue, GameCity, GC 12345
         </Typography>
 
