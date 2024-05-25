@@ -74,11 +74,7 @@ const navItems = [
     icon: null,
   },
   {
-    text: "Games",
-    icon: <ShoppingCartOutlined />,
-  },
-  {
-    text: "Accessories",
+    text: "AddProduct",
     icon: <ShoppingCartOutlined />,
   },
 

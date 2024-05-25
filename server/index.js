@@ -51,7 +51,7 @@ app.post("/auth/register", upload.single("picture"), register);
 // app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
-app.get("/games/:id", getSingleGame); // Changed from app.post to app.get
+app.get("/games/:id", getSingleGame);
 // Define a route to handle form submissions
 const KhaltiPayloadSchema = new mongoose.Schema({
   widget_id: String,

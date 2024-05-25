@@ -72,7 +72,6 @@ const ItemDetails = () => {
         <Box flex="1 1 50%" mb="40px">
           <Box display="flex" justifyContent="space-between">
             <Box>Home/Item</Box>
-            <Box>Prev Next</Box>
           </Box>
 
           <Box m="65px 0 25px 0">
@@ -113,10 +112,7 @@ const ItemDetails = () => {
             </Button>
           </Box>
           <Box>
-            <Box m="20px 0 5px 0" display="flex">
-              <FavoriteBorderOutlinedIcon />
-              <Typography sx={{ ml: "5px" }}>ADD TO WISHLIST</Typography>
-            </Box>
+
             <Typography>CATEGORIES: {item?.category}</Typography>
           </Box>
         </Box>

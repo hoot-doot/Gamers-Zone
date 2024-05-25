@@ -91,8 +91,8 @@ const Dashboard = () => {
         <StatBox
           title="Total Customers"
           value={data && data.totalCustomers}
-          increase="+14%"
-          description="WIP"
+          // increase="+14%"
+          description=""
           icon={
             <Email
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
@@ -102,8 +102,8 @@ const Dashboard = () => {
         <StatBox
           title="Sales Today"
           value={data && data.todayStats.totalSales}
-          increase="+21%"
-          description="WIP"
+          // increase="+21%"
+          description=""
           icon={
             <PointOfSale
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
@@ -122,8 +122,8 @@ const Dashboard = () => {
         <StatBox
           title="Monthly Sales"
           value={data && data.thisMonthStats.totalSales}
-          increase="+5%"
-          description="WIP"
+          // increase="+5%"
+          description=""
           icon={
             <PersonAdd
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
@@ -133,8 +133,8 @@ const Dashboard = () => {
         <StatBox
           title="Yearly Sales"
           value={data && data.yearlySalesTotal}
-          increase="+43%"
-          description="WIP"
+          // increase="+43%"
+          description=""
           icon={
             <Traffic
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}

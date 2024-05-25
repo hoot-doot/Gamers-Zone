@@ -136,13 +136,14 @@ const AddProduct = () => {
                 <MenuItem value="Action">Action</MenuItem>
                 <MenuItem value="Headset">Headset</MenuItem>
                 <MenuItem value="Keyboard">Keyboard</MenuItem>
+                <MenuItem value="RPG">Adventure</MenuItem>
                 <MenuItem value="Open World">Open World</MenuItem>
                 <MenuItem value="Adventure">Adventure</MenuItem>
               </Select>
             </FormControl>
           </Grid>
           {isGame && (
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <FormControl fullWidth>
                 <InputLabel>Platform</InputLabel>
                 <Select
@@ -158,7 +159,7 @@ const AddProduct = () => {
               </FormControl>
             </Grid>
           )}
-          <Grid item xs={6}>
+          <Grid item xs={2}>
             <TextField
               label="Rating"
               value={rating}

@@ -10,6 +10,8 @@ import Checkout from "./scenes/checkout/Checkout";
 import Confirmation from "./scenes/checkout/Confirmation";
 import { useSelector } from "react-redux";
 import Gear from "./scenes/gear/Gear";
+import PrivacyPolicy from "./scenes/privacy";
+import TermsAndConditions from "./scenes/terms";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -42,6 +44,8 @@ function App() {
           <Route path="item/:itemId" element={<ItemDetails />} />
           <Route path="checkout" element={isAuth ? <Checkout /> : <Navigate to="/login" />} />
           <Route path="checkout/success" element={<Confirmation />} />
+          <Route path="termsandconditions" element={<TermsAndConditions/>}/>
+          <Route path="privacypolicy" element={<PrivacyPolicy/>}/>
         </Routes>
         {!isLoginPage && <CartMenu />}
         {!isLoginPage && <Footer />}

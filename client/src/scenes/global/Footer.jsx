@@ -43,7 +43,6 @@ function Footer() {
           <Typography variant="h4" fontWeight="bold" mb="30px">
             Customer Care
           </Typography>
-          <Typography mb="30px">Help Center</Typography>
           <Typography mb="30px">Returns & Refunds</Typography>
         </Box>
 
@@ -55,7 +54,7 @@ function Footer() {
             50 BBC Whatever Blvd, Bhaktapur
           </Typography>
           <Typography mb="30px" sx={{ wordWrap: "break-word" }}>
-            Email: devansh@gmail.com
+            Email: devanshashrestha123@gmail.com
           </Typography>
           <Typography mb="30px">(222)333-4444</Typography>
         </Box>
