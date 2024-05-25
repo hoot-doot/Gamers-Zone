@@ -13,6 +13,7 @@ import Overview from "scenes/overview";
 import Daily from "scenes/daily";
 import Monthly from "scenes/monthly";
 import KhaltiTransactions from "scenes/khalti";
+import AddProduct from "scenes/addProduct";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -33,6 +34,7 @@ function App() {
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />
+              <Route path="/addProduct" element={<AddProduct />} />
             </Route>
           </Routes>
         </ThemeProvider>

@@ -74,50 +74,6 @@ export const getTransactions = async (req, res) => {
   }
 };
 
-// export const getKhaltiTransactions = async (req, res) => {
-//   try {
-//     // Extract query parameters
-//     const { page = 1, pageSize = 20, sort = null, search = "" } = req.query;
-
-//     // Parse and format sort parameter
-//     const generateSort = () => {
-//       if (!sort) return {};
-//       const sortParsed = JSON.parse(sort);
-//       return { [sortParsed.field]: sortParsed.sort === "asc" ? 1 : -1 };
-//     };
-//     const sortFormatted = generateSort();
-
-//     // Query Khalti transactions
-//     const khaltiTransactions = await KhaltiPayload.find({
-//       $or: [
-//         { amount: { $regex: new RegExp(search, "i") } },
-//         { idx: { $regex: new RegExp(search, "i") } },
-//         // Add more fields as needed for searching
-//       ],
-//     })
-//       .sort(sortFormatted)
-//       .skip((page - 1) * pageSize)
-//       .limit(parseInt(pageSize));
-
-//     // Count total number of Khalti transactions
-//     const total = await KhaltiPayload.countDocuments({
-//       $or: [
-//         { amount: { $regex: new RegExp(search, "i") } },
-//         { idx: { $regex: new RegExp(search, "i") } },
-//         // Add more fields as needed for searching
-//       ],
-//     });
-
-//     // Send response
-//     res.status(200).json({
-//       khaltiTransactions,
-//       total,
-//     });
-//   } catch (error) {
-//     res.status(404).json({ message: error.message });
-//   }
-// };
-
 
 export const getKhaltiTransactions = async (req, res) => {
   try {
@@ -166,3 +122,17 @@ export const getKhaltiTransactions = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+export const deleteProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedProduct = await Product.findByIdAndDelete(id);
+    if (!deletedProduct) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+    res.status(200).json({ message: "Product deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+

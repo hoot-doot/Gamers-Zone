@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Box,
   Card,
@@ -12,7 +13,8 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Header from "components/Header";
-import { useGetProductsQuery } from "state/api";
+import { useGetProductsQuery, useDeleteProductMutation } from "state/api";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Product = ({
   _id,
@@ -22,7 +24,9 @@ const Product = ({
   rating,
   category,
   stat,
+  handleDelete,
 }) => {
+  
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -52,12 +56,9 @@ const Product = ({
 
         <Typography variant="body2">{description}</Typography>
       </CardContent>
+
       <CardActions>
-        <Button
-          variant="primary"
-          size="small"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
+        <Button variant="primary" size="small" onClick={() => setIsExpanded(!isExpanded)}>
           See More
         </Button>
       </CardActions>
@@ -71,7 +72,16 @@ const Product = ({
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
+          <Button
+          variant="contained"
+          color="error"
+          startIcon={<DeleteIcon />}
+          onClick={() => handleDelete(_id)}
+        >
+          Delete
+        </Button>
         </CardContent>
+        
       </Collapse>
     </Card>
   );
@@ -79,8 +89,16 @@ const Product = ({
 
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
-  const isNonMobile = useMediaQuery("(min-width: 1000px)");
+  const [deleteProduct, { isLoading: isDeleting }] = useDeleteProductMutation();
 
+  const isNonMobile = useMediaQuery("(min-width: 1000px)");
+  const handleDelete = async (id) => {
+    try {
+      await deleteProduct(id).unwrap(); // Call the mutation and wait for the promise to resolve
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="PRODUCTS" subtitle="See your list of products." />
@@ -115,6 +133,7 @@ const Products = () => {
                 rating={rating}
                 category={category}
                 stat={stat}
+                handleDelete={handleDelete}
               />
             )
           )}

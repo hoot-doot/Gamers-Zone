@@ -10,6 +10,7 @@ export const api = createApi({
     "Transactions",
     "Sales",
     "Dashboard",
+    "KhaltiTransactions",
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -48,6 +49,21 @@ export const api = createApi({
       }),
       providesTags: ["KhaltiTransactions"],
     }),
+    deleteProduct: build.mutation({
+      query: (id) => ({
+        url: `client/products/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Products"],
+    }),
+    createProduct: build.mutation({
+      query: (product) => ({
+        url: "products",
+        method: "POST",
+        body: product,
+      }),
+      invalidatesTags: ["Products"],
+    }),
   }),
 });
 
@@ -59,4 +75,6 @@ export const {
   useGetSalesQuery,
   useGetDashboardQuery,
   useGetKhaltiTransactionsQuery,
+  useDeleteProductMutation,
+  useCreateProductMutation
 } = api;

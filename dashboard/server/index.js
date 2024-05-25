@@ -8,6 +8,8 @@ import morgan from "morgan";
 import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import salesRoutes from "./routes/sales.js";
+import productRoutes from "./routes/products.js";
+
 
 // data imports
 // import User from "./models/User.js";
@@ -38,6 +40,7 @@ app.use(cors());
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/sales", salesRoutes);
+app.use("/api/products", productRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
