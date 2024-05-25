@@ -27,10 +27,7 @@ function Footer() {
             UnityHub
           </Typography>
           <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat
+          UnityHub is a premier distributor of cutting-edge gaming products, offering a diverse range of top-tier gaming accessories, including ergonomic chairs, high-performance monitors, and precision peripherals. Our mission is to elevate your gaming experience with the highest quality products and unparalleled customer service. At UnityHub, we bring the best in gaming innovation directly to you.
           </div>
         </Box>
 
@@ -38,7 +35,6 @@ function Footer() {
           <Typography variant="h4" fontWeight="bold" mb="30px">
             About Us
           </Typography>
-          <Typography mb="30px">Our Stores</Typography>
           <Typography mb="30px">Terms & Conditions</Typography>
           <Typography mb="30px">Privacy Policy</Typography>
         </Box>

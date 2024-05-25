@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
+import { IconButton, Box,Rating, Typography, useTheme, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../theme";
@@ -16,7 +16,7 @@ const Item = ({ item, width }) => {
     palette: { neutral },
   } = useTheme();
 
-  const { category, price, name, picturePath } = item;
+  const { category, price, name, rating, picturePath } = item;
 
 
   return (
@@ -78,6 +78,7 @@ const Item = ({ item, width }) => {
           {category[1]
             .replace(/^./, (str) => str.toUpperCase())}
         </Typography>
+        <Rating value={rating} readOnly />
         <Typography>{name}</Typography>
         <Typography fontWeight="bold">Nrs {price}</Typography>
       </Box>

@@ -32,16 +32,19 @@ const ShoppingList = () => {
   useEffect(() => {
     getItems();
   }, []);
+  const filteredItems = items.filter(
+    item => !item.category.includes("Gaming")
+  );
 
-  const topRatedItems = items.filter(
+  const topRatedItems = filteredItems.filter(
     item => item.rating >= 4.5
   ); 
 
-  const actionGames = items.filter(
+  const actionGames = filteredItems.filter(
     item => item.category.includes("Action")
   );
 
-  const strategyGames = items.filter(
+  const strategyGames = filteredItems.filter(
     item => item.category.includes("Strategy")
   );
 
@@ -79,7 +82,7 @@ const ShoppingList = () => {
         columnGap="1.33%"
       >
         {value === "all" &&
-          items.map((item) => (
+          filteredItems.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
           ))}
           {value === "topRated" &&

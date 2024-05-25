@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import multer from "multer";
 import helmet from  "helmet";
 import morgan  from "morgan"
+import Transaction from "./models/Transaction.js";
 import path  from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
@@ -17,9 +18,9 @@ import { getSingleGame }  from "./controllers/games.js";
 // import { createPost } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
 // import User from "./models/User.js";
-// import Game from "./models/Game.js";
+import Product from "./models/Product.js";
 // import Order from "./models/Order.js";
-// import { games} from "./data/index.js";
+import { games} from "./data/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -51,6 +52,55 @@ app.post("/auth/register", upload.single("picture"), register);
 
 /* ROUTES */
 app.get("/games/:id", getSingleGame); // Changed from app.post to app.get
+// Define a route to handle form submissions
+const KhaltiPayloadSchema = new mongoose.Schema({
+  widget_id: String,
+  status: Number,
+  t: String,
+  idx: String,
+  token: String,
+  amount: Number,
+  bank_reference: String,
+  mobile: String,
+  product_identity: [String],
+  product_name: String,
+  product_url: String,
+  purchase_order_id: String,
+  purchase_order_name: String,
+  transaction_id: String,
+},{ timestamps: true });
+
+// Create a new model using the schema
+const KhaltiPayload = mongoose.model('KhaltiPayload', KhaltiPayloadSchema);
+
+// Create a new document using the model and save the Khalti payload
+app.post("/khalti", async (req, res) => {
+  const khaltiPayloadData = req.body;
+
+  try {
+    const newKhaltiPayload = new KhaltiPayload(khaltiPayloadData);
+    await newKhaltiPayload.save();
+    res.status(201).json(newKhaltiPayload);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post("/transactions", async (req, res) => {
+  const { userId, cost, products } = req.body;
+
+  try {
+    const newTransaction = new Transaction({
+      userId,
+      cost,
+      products: products.map(id => new mongoose.Types.ObjectId(id)),
+    });
+    await newTransaction.save();
+    res.status(201).json(newTransaction);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 app.use("/auth", authRoutes);
 // app.use("/users", userRoutes);
@@ -68,6 +118,6 @@ mongoose
     // Order
     /* ADD DATA ONE TIME */
     // User.insertMany(users);
-    // Game.insertMany(games)
+      // Product.insertMany(games)
   })
   .catch((error) => console.log(`${error} did not connect`));

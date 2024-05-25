@@ -20,7 +20,7 @@ const ShoppingList = () => {
 
   async function getItems() {
     const items = await fetch(
-      "http://localhost:3001/games",
+      "http://localhost:3001/gear",
       { method: "GET" }
     );
     console.log(items);
@@ -32,17 +32,22 @@ const ShoppingList = () => {
   useEffect(() => {
     getItems();
   }, []);
-
-  const topRatedItems = items.filter(
+  const filteredItems = items.filter(
+    item => item.category.includes("Gaming")
+  );
+  const topRatedItems = filteredItems.filter(
     item => item.rating >= 4.5
   ); 
 
-  const actionGames = items.filter(
-    item => item.category.includes("Action")
+  const headset = filteredItems.filter(
+    item => item.category.includes("Headset")
   );
 
-  const strategyGames = items.filter(
-    item => item.category.includes("Strategy")
+  const keyboard = filteredItems.filter(
+    item => item.category.includes("Keyboard")
+  );
+  const mouse = filteredItems.filter(
+    item => item.category.includes("Mouse")
   );
 
   return (
@@ -66,8 +71,9 @@ const ShoppingList = () => {
       >
         <Tab label="ALL" value="all" />
         <Tab label="TOP RATED" value="topRated" />
-        <Tab label="Action" value="actionGames" />
-        <Tab label="Strategy" value="strategyGames" />
+        <Tab label="Headset" value="Headset" />
+        <Tab label="Mouse" value="Mouse" />
+        <Tab label="Keyboard" value="Keyboard" />
         
       </Tabs>
       <Box
@@ -79,19 +85,23 @@ const ShoppingList = () => {
         columnGap="1.33%"
       >
         {value === "all" &&
-          items.map((item) => (
+          filteredItems.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
           ))}
           {value === "topRated" &&
           topRatedItems.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
           ))}
-        {value === "actionGames" &&
-          actionGames.map((item) => (
+        {value === "Headset" &&
+          headset.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
           ))}
-        {value === "strategyGames" &&
-          strategyGames.map((item) => (
+        {value === "Mouse" &&
+          mouse.map((item) => (
+            <Item item={item} key={`${item.name}-${item._id}`} />
+          ))}
+          {value === "Keyboard" &&
+          keyboard.map((item) => (
             <Item item={item} key={`${item.name}-${item._id}`} />
           ))}
         

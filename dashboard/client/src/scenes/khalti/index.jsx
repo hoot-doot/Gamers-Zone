@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Box, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { useGetTransactionsQuery } from "state/api";
+import { useGetKhaltiTransactionsQuery } from "state/api";
 import Header from "components/Header";
 import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 
-const Transactions = () => {
+const KhaltiTransactions = () => {
   const theme = useTheme();
 
   // values to be sent to the backend
@@ -15,7 +15,7 @@ const Transactions = () => {
   const [search, setSearch] = useState("");
 
   const [searchInput, setSearchInput] = useState("");
-  const { data, isLoading } = useGetTransactionsQuery({
+  const { data, isLoading } = useGetKhaltiTransactionsQuery({
     page,
     pageSize,
     sort: JSON.stringify(sort),
@@ -24,38 +24,41 @@ const Transactions = () => {
 
   const columns = [
     {
-      field: "_id",
-      headerName: "ID",
+      field: "idx",
+      headerName: "Transaction ID",
       flex: 1,
     },
     {
-      field: "userId",
-      headerName: "User ID",
+      field: "token",
+      headerName: "Token",
+      flex: 1,
+    },
+    {
+      field: "amount",
+      headerName: "Amount",
+      flex: 1,
+    },
+    {
+      field: "status",
+      headerName: "Status",
       flex: 1,
     },
     {
       field: "createdAt",
-      headerName: "CreatedAt",
+      headerName: "Created At",
       flex: 1,
     },
     {
-      field: "products",
-      headerName: "# of Products",
-      flex: 0.5,
-      sortable: false,
-      renderCell: (params) => params.value.length,
-    },
-    {
-      field: "cost",
-      headerName: "Cost",
-      flex: 1,
-      renderCell: (params) => `Nrs ${Number(params.value).toFixed(2)}`,
-    },
+        field: "productName",
+        headerName: "Product Name",
+        flex: 1,
+        valueGetter: (params) => params.row.product_name || "",
+      },
   ];
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="TRANSACTIONS" subtitle="Entire list of transactions" />
+      <Header title="KHALTI TRANSACTIONS" subtitle="Entire list of Khalti transactions" />
       <Box
         height="80vh"
         sx={{
@@ -85,7 +88,7 @@ const Transactions = () => {
       >
         <DataGrid
           loading={isLoading || !data}
-          getRowId={(row) => row._id}
+          getRowId={(row) => row.idx}
           rows={(data && data.transactions) || []}
           columns={columns}
           rowCount={(data && data.total) || 0}
@@ -108,4 +111,4 @@ const Transactions = () => {
   );
 };
 
-export default Transactions;
+export default KhaltiTransactions;

@@ -60,6 +60,7 @@ const MainCarousel = () => {
             src={texture}
             alt={`carousel-${index}`}
             style={{
+              paddingTop:"50px",
               width: "100%",
               height: "700px",
               objectFit: "cover",
@@ -79,15 +80,9 @@ const MainCarousel = () => {
             margin={isNonMobile ? undefined : "0 auto"}
             maxWidth={isNonMobile ? undefined : "240px"}
           >
-            <Typography color={shades.secondary[200]}>-- NEW ITEMS</Typography>
-            <Typography variant="h1">Summer Sale</Typography>
-            <Typography
-              fontWeight="bold"
-              color={shades.secondary[300]}
-              sx={{ textDecoration: "underline" }}
-            >
-              Discover More
-            </Typography>
+            <Typography variant="h2">
+"Unlock your ultimate gaming potential with our precision-crafted accessories. Elevate your game, dominate your competition, and immerse yourself in the experience like never before. Gear up for greatness!"</Typography>
+
           </Box>
         </Box>
       ))}

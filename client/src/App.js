@@ -9,6 +9,7 @@ import Login from "./scenes/loginPage"
 import Checkout from "./scenes/checkout/Checkout";
 import Confirmation from "./scenes/checkout/Confirmation";
 import { useSelector } from "react-redux";
+import Gear from "./scenes/gear/Gear";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="login" element={<Login />} />
           <Route path="/" element={<Home />} />
+          <Route path="accessories" element={<Gear />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
           <Route path="checkout" element={isAuth ? <Checkout /> : <Navigate to="/login" />} />
           <Route path="checkout/success" element={<Confirmation />} />

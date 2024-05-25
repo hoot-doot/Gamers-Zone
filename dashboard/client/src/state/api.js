@@ -9,7 +9,6 @@ export const api = createApi({
     "Customers",
     "Transactions",
     "Sales",
-    "Admins",
     "Dashboard",
   ],
   endpoints: (build) => ({
@@ -37,13 +36,17 @@ export const api = createApi({
       query: () => "sales/sales",
       providesTags: ["Sales"],
     }),
-    getAdmins: build.query({
-      query: () => "management/admins",
-      providesTags: ["Admins"],
-    }),
     getDashboard: build.query({
       query: () => "general/dashboard",
       providesTags: ["Dashboard"],
+    }),
+    getKhaltiTransactions: build.query({
+      query: ({ page, pageSize, sort, search }) => ({
+        url: "client/khalti",
+        method: "GET",
+        params: { page, pageSize, sort, search },
+      }),
+      providesTags: ["KhaltiTransactions"],
     }),
   }),
 });
@@ -54,6 +57,6 @@ export const {
   useGetCustomersQuery,
   useGetTransactionsQuery,
   useGetSalesQuery,
-  useGetAdminsQuery,
   useGetDashboardQuery,
+  useGetKhaltiTransactionsQuery,
 } = api;

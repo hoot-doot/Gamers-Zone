@@ -3,8 +3,6 @@ import { Badge, Box,MenuItem, IconButton ,Typography} from "@mui/material";
 import {
   PersonOutline,
   ShoppingBagOutlined,
-  MenuOutlined,
-  SearchOutlined,
 } from "@mui/icons-material";
 import Popover from '@mui/material/Popover';
 import { useNavigate } from "react-router-dom";
@@ -61,9 +59,11 @@ function Navbar() {
         <Box
           onClick={() => navigate("/")}
           sx={{ "&:hover": { cursor: "pointer" } }}
-          color={shades.secondary[500]}
+          color={"green"}
         >
+          <Typography variant="h3">
           UnityHUB
+          </Typography>
         </Box>
         <Box
           display="flex"
@@ -71,9 +71,6 @@ function Navbar() {
           columnGap="20px"
           zIndex="2"
         >
-          <IconButton sx={{ color: "black" }}>
-            <SearchOutlined />
-          </IconButton>
 
           <Button aria-describedby={id}  onClick={handleClick}>
           <PersonOutline />
@@ -125,9 +122,6 @@ function Navbar() {
               <ShoppingBagOutlined />
             </IconButton>
           </Badge>
-          <IconButton sx={{ color: "black" }}>
-            <MenuOutlined />
-          </IconButton>
         </Box>
       </Box>
     </Box>

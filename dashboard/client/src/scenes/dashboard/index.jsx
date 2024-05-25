@@ -52,7 +52,7 @@ const Dashboard = () => {
       field: "cost",
       headerName: "Cost",
       flex: 1,
-      renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
+      renderCell: (params) => `Nrs ${Number(params.value).toFixed(2)}`,
     },
   ];
 

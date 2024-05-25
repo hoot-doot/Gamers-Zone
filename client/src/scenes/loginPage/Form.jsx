@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState } from "react";
 import {
   Box,
@@ -47,6 +48,15 @@ const initialValuesLogin = {
 };
 
 const Form = () => {
+  const [isAlertVisible, setIsAlertVisible] = React.useState(false);
+
+  const handleButtonClick = () => {
+    setIsAlertVisible(true);
+
+    setTimeout(() => {
+      setIsAlertVisible(false);
+    }, 2000);
+  };
   const [loginStatus, setLoginStatus] = useState("");
   const [pageType, setPageType] = useState("login");
   const { palette } = useTheme();
@@ -90,7 +100,8 @@ const Form = () => {
     // console.log(loggedInResponse)
     if (!loggedInResponse.ok) {
         // If response status is not ok, throw an error with the response status text
-        throw new Error(loggedInResponse.statusText);
+        console.log(loggedInResponse)
+        throw new Error(loggedInResponse);
       }
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
@@ -105,7 +116,7 @@ const Form = () => {
     }
 
 } catch (error) {
-    setLoginStatus("Login Failed please check your credentials");
+    setLoginStatus("Please check your credentials and try again");
   }
 };
 
@@ -246,12 +257,15 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
           </Box>
-
+          <Typography fontSize={"13px"} color={"red"}>
+              {isAlertVisible && loginStatus}
+          </Typography>
           {/* BUTTONS */}
           <Box>
             <Button
               fullWidth
               type="submit"
+              onClick={handleButtonClick} 
               sx={{
                 m: "2rem 0",
                 p: "1rem",
@@ -260,7 +274,8 @@ const Form = () => {
                 "&:hover": { color: palette.primary.main },
               }}
             >
-              {isLogin ? "LOGIN" : "REGISTER"}
+              {isLogin ? "LOGIN" 
+               : "REGISTER"}
             </Button>
             <Typography
               onClick={() => {
@@ -280,6 +295,7 @@ const Form = () => {
                 ? "Don't have an account? Sign Up here."
                 : "Already have an account? Login here."}
             </Typography>
+            
           </Box>
         </form>
       )}
