@@ -13,7 +13,7 @@ const TermsAndConditions = () => {
           1. Introduction
         </Typography>
         <Typography paragraph>
-          Welcome to UnityHub. These Terms and Conditions ("Terms") govern your use of our website located at www.unityhub.com (the "Site") and any services, products, and content provided by UnityHub (collectively, "Services"). By accessing or using our Services, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use our Services.
+          Welcome to Gamers Zone. These Terms and Conditions ("Terms") govern your use of our website located at www.Gamers Zone.com (the "Site") and any services, products, and content provided by Gamers Zone (collectively, "Services"). By accessing or using our Services, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use our Services.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
@@ -37,7 +37,7 @@ const TermsAndConditions = () => {
           4.1 Order Acceptance
         </Typography>
         <Typography paragraph>
-          All orders are subject to acceptance by UnityHub. We reserve the right to refuse or cancel any order for any reason, including but not limited to product availability, errors in product descriptions or pricing, and suspected fraud.
+          All orders are subject to acceptance by Gamers Zone. We reserve the right to refuse or cancel any order for any reason, including but not limited to product availability, errors in product descriptions or pricing, and suspected fraud.
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
           4.2 Payment
@@ -50,14 +50,14 @@ const TermsAndConditions = () => {
           5. Pricing and Availability
         </Typography>
         <Typography paragraph>
-          All prices are listed in the currency stated on the Site and are subject to change without notice. UnityHub endeavors to provide accurate product and pricing information but errors may occur. If we discover an error in pricing or availability, we will notify you and provide you with the option to confirm the order at the correct price or cancel it.
+          All prices are listed in the currency stated on the Site and are subject to change without notice. Gamers Zone endeavors to provide accurate product and pricing information but errors may occur. If we discover an error in pricing or availability, we will notify you and provide you with the option to confirm the order at the correct price or cancel it.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
           6. Shipping and Delivery
         </Typography>
         <Typography paragraph>
-          UnityHub will process and ship orders according to the shipping method selected at checkout. Delivery times are estimates and may vary. We are not responsible for delays caused by shipping carriers or events beyond our control.
+          Gamers Zone will process and ship orders according to the shipping method selected at checkout. Delivery times are estimates and may vary. We are not responsible for delays caused by shipping carriers or events beyond our control.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
@@ -71,14 +71,14 @@ const TermsAndConditions = () => {
           8. Intellectual Property
         </Typography>
         <Typography paragraph>
-          All content on the Site, including but not limited to text, graphics, logos, images, and software, is the property of UnityHub or its content suppliers and is protected by intellectual property laws. You may not use, reproduce, distribute, or create derivative works of our content without our express written permission.
+          All content on the Site, including but not limited to text, graphics, logos, images, and software, is the property of Gamers Zone or its content suppliers and is protected by intellectual property laws. You may not use, reproduce, distribute, or create derivative works of our content without our express written permission.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
           9. User Conduct
         </Typography>
         <Typography paragraph>
-          You agree not to use our Services for any unlawful purpose or in any way that could harm UnityHub or its users. Prohibited activities include, but are not limited to:
+          You agree not to use our Services for any unlawful purpose or in any way that could harm Gamers Zone or its users. Prohibited activities include, but are not limited to:
           <ul>
             <li>Engaging in fraudulent activities</li>
             <li>Posting or transmitting any unlawful, defamatory, or obscene material</li>
@@ -91,31 +91,31 @@ const TermsAndConditions = () => {
           10. Disclaimers and Limitation of Liability
         </Typography>
         <Typography paragraph>
-          Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied. UnityHub does not warrant that the Services will be uninterrupted or error-free. To the fullest extent permitted by law, UnityHub disclaims all warranties, express or implied, including but not limited to, implied warranties of merchantability and fitness for a particular purpose.
+          Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied. Gamers Zone does not warrant that the Services will be uninterrupted or error-free. To the fullest extent permitted by law, Gamers Zone disclaims all warranties, express or implied, including but not limited to, implied warranties of merchantability and fitness for a particular purpose.
         </Typography>
         <Typography paragraph>
-          In no event shall UnityHub be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our Services.
+          In no event shall Gamers Zone be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our Services.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
           11. Indemnification
         </Typography>
         <Typography paragraph>
-          You agree to indemnify, defend, and hold harmless UnityHub and its affiliates, officers, directors, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses arising out of or related to your use of the Services or violation of these Terms.
+          You agree to indemnify, defend, and hold harmless Gamers Zone and its affiliates, officers, directors, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses arising out of or related to your use of the Services or violation of these Terms.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
           12. Changes to Terms
         </Typography>
         <Typography paragraph>
-          UnityHub reserves the right to modify these Terms at any time. Any changes will be effective immediately upon posting on the Site. Your continued use of the Services after the posting of revised Terms constitutes your acceptance of the changes.
+          Gamers Zone reserves the right to modify these Terms at any time. Any changes will be effective immediately upon posting on the Site. Your continued use of the Services after the posting of revised Terms constitutes your acceptance of the changes.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
           13. Governing Law
         </Typography>
         <Typography paragraph>
-          These Terms and any disputes arising out of or related to them shall be governed by and construed in accordance with the laws of the jurisdiction where UnityHub is headquartered, without regard to its conflict of law principles.
+          These Terms and any disputes arising out of or related to them shall be governed by and construed in accordance with the laws of the jurisdiction where Gamers Zone is headquartered, without regard to its conflict of law principles.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
@@ -125,14 +125,16 @@ const TermsAndConditions = () => {
           If you have any questions about these Terms, please contact us at:
         </Typography>
         <Typography paragraph>
-          <strong>UnityHub Customer Service</strong><br />
-          Email: <Link href="mailto:devanshashrestha123@gmail.com">devanshashrestha123@gmail.com</Link><br />
+          <strong>Gamers Zone Customer Service</strong><br />
+          Email: <Link href="mailto:richardtumb3132@gmail.com
+">richardtumb3132@gmail.com
+</Link><br />
           Phone: (977) 9819183781<br />
           Address: 123 Gaming Avenue, GameCity, GC 12345
         </Typography>
 
         <Typography paragraph>
-          By using UnityHub, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
+          By using Gamers Zone, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
         </Typography>
       </Box>
     </Container>

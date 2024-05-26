@@ -59,10 +59,10 @@ function Navbar() {
         <Box
           onClick={() => navigate("/")}
           sx={{ "&:hover": { cursor: "pointer" } }}
-          color={"green"}
+          color={"#1da6b3"}
         >
           <Typography variant="h3">
-          UnityHUB
+          Gamers Zone
           </Typography>
         </Box>
         <Box

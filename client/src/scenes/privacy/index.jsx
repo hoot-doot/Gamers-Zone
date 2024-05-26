@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
           1. Introduction
         </Typography>
         <Typography paragraph>
-          UnityHub ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, www.unityhub.com (the "Site"), and use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+          Gamers Zone ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, www.Gamers Zone.com (the "Site"), and use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
@@ -94,7 +94,7 @@ const PrivacyPolicy = () => {
           6. Policy for Children
         </Typography>
         <Typography paragraph>
-          We do not knowingly solicit information from or market to children under the age of 13. If we learn that we have collected personal information from a child under age 13 without verification of parental consent, we will delete that information as quickly as possible. If you become aware of any data we have collected from children under age 13, please contact us at support@unityhub.com.
+          We do not knowingly solicit information from or market to children under the age of 13. If we learn that we have collected personal information from a child under age 13 without verification of parental consent, we will delete that information as quickly as possible. If you become aware of any data we have collected from children under age 13, please contact us at support@Gamers Zone.com.
         </Typography>
 
         <Typography variant="h3" gutterBottom>
@@ -111,14 +111,15 @@ const PrivacyPolicy = () => {
           If you have questions or comments about this Privacy Policy, please contact us at:
         </Typography>
         <Typography paragraph>
-          <strong>UnityHub Customer Service</strong><br />
-          Email: <Link href="mailto:devanshashrestha123@gmail.com">devanshashrestha123@gmail.com</Link><br />
+          <strong>Gamers Zone Customer Service</strong><br />
+          Email: <Link href="mailto:richardtumb3132@gmail.com
+">richardtumb3132@gmail.com</Link><br />
           Phone: (977) 9819183781<br />
           Address: 123 Gaming Avenue, GameCity, GC 12345
         </Typography>
 
         <Typography paragraph>
-          By using UnityHub, you acknowledge that you have read, understood, and agreed to this Privacy Policy.
+          By using Gamers Zone, you acknowledge that you have read, understood, and agreed to this Privacy Policy.
         </Typography>
       </Box>
     </Container>

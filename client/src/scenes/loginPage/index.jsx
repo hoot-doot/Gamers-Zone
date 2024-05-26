@@ -22,7 +22,7 @@ const LoginPage = () => {
               cursor: 'pointer'
           }
       }}>
-          UnityHub
+          Gamers Zone
         </Typography>
       </Box>
 

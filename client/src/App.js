@@ -40,8 +40,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="login" element={<Login />} />
-          <Route path="/" element={<Home />} />
-          <Route path="accessories" element={<Gear />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Gear />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
           <Route path="checkout" element={isAuth ? <Checkout /> : <Navigate to="/login" />} />
           <Route path="checkout/success" element={<Confirmation />} />

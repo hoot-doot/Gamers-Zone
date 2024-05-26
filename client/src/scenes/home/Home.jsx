@@ -27,15 +27,15 @@ function Home() {
               },
             }}
           >
-            <IconButton onClick={() => navigate(`/accessories`)}
-              sx={{ width:"100px",height:"100px",color: "green" ,'&:hover': { color: 'black' } }}
+            <IconButton onClick={() => navigate(`/`)}
+              sx={{ width:"100px",height:"100px",color: "#1da6b3" ,'&:hover': { color: 'black' } }}
             >
               <SportsEsportsIcon sx={{width:"70px",height:"70px"}} />
             </IconButton>
             
           </Badge>
 
-          < Typography color="green" variant="h3" textAlign="center">Accessories</Typography>
+          < Typography color="#1da6b3" variant="h3" textAlign="center">Accessories</Typography>
       <ShoppingList />
     </div>
   );

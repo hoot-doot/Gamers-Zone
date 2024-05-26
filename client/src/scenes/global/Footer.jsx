@@ -26,10 +26,10 @@ function Footer() {
             mb="30px"
             color={shades.secondary[500]}
           >
-            UnityHub
+            Gamers Zone
           </Typography>
           <div>
-          UnityHub is a premier distributor of cutting-edge gaming products, offering a diverse range of top-tier gaming accessories, including ergonomic chairs, high-performance monitors, and precision peripherals. Our mission is to elevate your gaming experience with the highest quality products and unparalleled customer service. At UnityHub, we bring the best in gaming innovation directly to you.
+          Gamers Zone is a premier distributor of cutting-edge gaming products, offering a diverse range of top-tier gaming accessories, including ergonomic chairs, high-performance monitors, and precision peripherals. Our mission is to elevate your gaming experience with the highest quality products and unparalleled customer service. At Gamers Zone, we bring the best in gaming innovation directly to you.
           </div>
         </Box>
 
@@ -56,7 +56,7 @@ function Footer() {
             50 BBC Whatever Blvd, Bhaktapur
           </Typography>
           <Typography mb="30px" sx={{ wordWrap: "break-word" }}>
-            Email: devanshashrestha123@gmail.com
+            Email: richardtumb3132@gmail.com
           </Typography>
           <Typography mb="30px">(222)333-4444</Typography>
         </Box>

@@ -26,15 +26,15 @@ function Gear() {
               },
             }}
           >
-            <IconButton onClick={() => navigate(`/`)}
-              sx={{ width:"100px",height:"100px",color: "green" ,'&:hover': { color: 'black' } }}
+            <IconButton onClick={() => navigate(`/home`)}
+              sx={{ width:"100px",height:"100px",color: "#1da6b3" ,'&:hover': { color: 'black' } }}
             >
               <VideogameAssetIcon sx={{width:"70px",height:"70px"}} />
             </IconButton>
             
           </Badge>
 
-          < Typography color="green" variant="h3" textAlign="center">Games</Typography>
+          < Typography color="#1da6b3" variant="h3" textAlign="center">Games</Typography>
       <ShoppingList />
     </div>
   );
