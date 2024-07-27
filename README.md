@@ -19,5 +19,5 @@
 ![Gamers-Zone](https://github.com/hoot-doot/Gamers-Zone/blob/main/ss%20client/6.png)
 ![Gamers-Zone](https://github.com/hoot-doot/Gamers-Zone/blob/main/ss%20client/7.png)
 ![Gamers-Zone](https://github.com/hoot-doot/Gamers-Zone/blob/main/ss%20client/999.png)
-![Gamers-Zone](https://github.com/hoot-doot/Gamers-Zone/blob/main/ss%20client/99.png)
 
+<img src="https://github.com/hoot-doot/Gamers-Zone/blob/main/ss%20client/99.png" width="50%" height="50%">
